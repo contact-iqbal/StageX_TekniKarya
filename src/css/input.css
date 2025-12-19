@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@theme { --font-sans: "Poppins", sans-serif; }
+
+@variant dark (.dark &);
+
+.triangle{
+    clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
+    background-color: #fff;
+}
+
+.triangle-reverse{
+    clip-path: polygon(10% 0%, 90% 0%, 50% 100%);
+    background-color: #fff;
+}
