@@ -240,9 +240,6 @@
   .z-2 {
     z-index: 2;
   }
-  .z-9999 {
-    z-index: 9999;
-  }
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -616,12 +613,6 @@
     &::placeholder {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-  .focus\:outline-none {
-    &:focus {
-      --tw-outline-style: none;
-      outline-style: none;
     }
   }
 }
