@@ -16,6 +16,14 @@
     background-color: #fff;
 }
 
+.scroll-none{
+  scrollbar-width: none;
+}
+
+.scroll-none::-webkit-scrollbar{
+  display: none;
+}
+
 @keyframes carousel {
     0% {
     transform: translateX(0);
