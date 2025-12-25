@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@theme { --font-sans: "Poppins", sans-serif; --animate-carousel: carousel 20s linear infinite; }
+
+@variant dark (.dark &);
+
+.triangle{
+    clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
+    background-color: #fff;
+}
+
+.triangle-reverse{
+    clip-path: polygon(10% 0%, 90% 0%, 50% 100%);
+    background-color: #fff;
+}
+
+.dark .triangle{
+  background-color: #0E141B;
+}
+
+.dark .triangle-reverse{
+  background-color: #0E141B;
+}
+
+.scroll-none{
+  scrollbar-width: none;
+}
+
+.scroll-none::-webkit-scrollbar{
+  display: none;
+}
+
+@keyframes carousel {
+    0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

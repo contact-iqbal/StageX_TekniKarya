@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="dark:bg-[#0E141B]">
+    <!--// start of navigation -->
+    <header class="w-full bg-white fixed z-3 h-20 dark:bg-[#0E141B]">
+        <div class="flex items-center justify-none lg:justify-between p-5 max-w-7xl m-auto relative z-3">
+            <a href="#" class="font-sans font-bold text-2xl text-[#26A2FF] dark:text-[#4FA8E8]">
+                Unipro.
+            </a>
+            <nav class="text-[#000000] items-center gap-9 hidden lg:flex dark:text-[#E6EEF7]">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resources.html" class="font-bold">Resources</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="w-full lg:max-w-fit max-w-none lg:w-full h-full flex items-center justify-end gap-1">
+                <button
+                    class="dark-mode-toggle bg-[#0E141B] p-1 flex items-center gap-1 text-lg font-semibold rounded-full relative dark:bg-[#E6EEF7]">
+                    <div class="bg-white w-8 h-8 rounded-full flex items-center justify-center absolute left-1 transition-[left] duration-400 ease-in-out z-2 dark:bg-[#0E141B]"
+                        id="iconWrapper">
+                        <i data-lucide="moon" class="fill-[#0E141B] opacity-100 transition-[opacity] duration-200"
+                            id="moon"></i>
+                        <i data-lucide="sun" class="fill-[#1A1A1A] absolute opacity-0 transition-[opacity] duration-200 dark:text-[#E6EEF7]"
+                            id="sun"></i>
+                    </div>
+                    <div class="w-8 h-8">
+                    </div>
+                    <p
+                        class="theme-text text-white px-2 text-sm opacity-100 transition-[opacity] duration-300 relative h-5 dark:text-[#0E141B]">
+                        Dark Mode</p>
+                </button>
+
+                <button class="lg:hidden p-2 rounded-full bg-black sidebar-toggle dark:bg-[#E6EEF7]">
+                    <i data-lucide="menu" class="text-white dark:text-[#0E141B]"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="overlay h-screen w-full bg-[rgba(0,0,0,.7)] fixed top-0 opacity-0 transition-all duration-300` lg:hidden"></div>
+    <aside class="min-h-screen absolute w-96 bg-white fixed top-0 right-0 translate-x-full transition-all duration-300 lg:hidden" id="sidebar">
+        <div class="p-5 flex items-center gap-6">
+            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center close-toggle">
+                <i data-lucide="x" width="18" height="18" class="text-white stroke-3"></i>
+            </div>
+            <h3 class="text-2xl font-bold">Menu</h3>
+        </div>
+        <div class="p-5 flex flex-col gap-3">
+            <a href="index.html" class="text-xl">Home</a>
+            <a href="about.html" class="text-xl">About</a>
+            <a href="resources.html" class="text-xl font-semibold">Resources</a>
+            <a href="service.html" class="text-xl">Service</a>
+            <a href="contact.html" class="text-xl">Contact</a>
+        </div>
+    </aside>
+
+    <main class="flex flex-col relative z-1" id="content">
+        <section class="pt-20 h-140 relative" id="slider">
+            <div class="h-full w-full bg-[linear-gradient(to_bottom,#fff_10%,rgba(0,0,0,.5)_100%)] dark:bg-[linear-gradient(to_bottom,#0E141B,rgba(0,0,0,.2)_100%)] absolute top-0 z-2"></div>
+            <div class="slider-image w-full h-full bg-[url(/src/img/building.jpg)] bg-center bg-cover absolute top-0"></div>
+            <div class="flex items-end justify-between h-full w-full relative z-3">
+                <div class="w-full h-full flex justify-end relative z-3 p-5 flex-col gap-3 items-start" id="slider-wrapper">
+                    <small class="slider-label bg-[#FFFFFF25] dark:bg-[#0E141B25] px-5 py-2 rounded-full text-white font-semibold text-white backdrop-blur-md text-sm">Future</small>
+                    <h1 class="slider-header text-4xl font-bold text-white dark:text-[#E6EEF7]">Exploring the Path to Better Health</h1>
+                    <p class="slider-content text-white w-fit lg:w-90 dark:text-[#E6EEF7]">A trusted health destination, this post uncovers the principles and practices that make our clinic a center for better care.</p>
+                </div>
+                <div class="flex items-end gap-2 p-5 slider-dot-container">
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl m-auto h-fit py-5 w-full flex items-center justify-center max-w-7xl m-auto p-5">
+            <div class="flex flex-col gap-2 w-full">
+                <div class="flex flex-col gap-2 py-2 border-b border-[#D7D7D7] dark:border-[#2A3645]">
+                    <small class="font-semibold dark:text-[#E6EEF7]">Resources</small>
+                    <h2 class="text-3xl font-bold dark:text-[#E6EEF7]">Featured Healthcare <br> Collaborations</h2>
+                </div>
+                <div class="overflow-x-auto flex gap-2 scroll-none">
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/resources-1.jpg)] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#Love</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">Prioritizing Preventive Care for a Healthier Life</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">Discover why preventive care is essential and how regular check-ups can help you stay healthy, detect issues early, and improve long-term well-being.</p>
+                    </div>
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/resources-2.jpg)] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#Community</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">How Integrated Care Improves Patient Health Outcomes</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">Discover how coordinated care across medical services leads to more effective treatments and better patient experiences.</p>
+                    </div>
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/resources-3.jpg)] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#Christmast</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">Building Healthy Habits for a Stronger Body and Mind</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">Explore simple, sustainable habits that support both physical health and mental well-being.</p>
+                    </div>
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/resources-4.jpg)] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#NewYear</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">What to Expect During Your First Clinic Visit</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">A helpful guide to preparing for your first appointment, designed to make your clinic experience smooth and stress-free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl m-auto h-fit py-6 w-full flex items-center justify-center max-w-7xl m-auto p-5">
+            <div class="flex flex-col gap-2 w-full">
+                <div class="flex flex-col gap-2 py-2 border-b border-[#D7D7D7] dark:border-[#2A3645]">
+                    <small class="font-semibold dark:text-[#E6EEF7]">Blogging</small>
+                    <h2 class="text-3xl font-bold dark:text-[#E6EEF7]">Related blogs today</h2>
+                </div>
+                <div class="overflow-x-auto flex gap-2 scroll-none">
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/blog-none.jpg)] bg-[#E2E2E2] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl dark:bg-[#223447]"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#Love</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">lorem ipsum dolor sit amet consecteur</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">Discover why preventive care is essential and how regular check-ups can help you stay healthy, detect issues early, and improve long-term well-being.</p>
+                    </div>
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/blog-none.jpg)] bg-[#E2E2E2] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl dark:bg-[#223447]"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#Community</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">lorem ipsum dolor sit amet consecteur</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">Discover how coordinated care across medical services leads to more effective treatments and better patient experiences.</p>
+                    </div>
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/blog-none.jpg)] bg-[#E2E2E2] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl dark:bg-[#223447]"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#Christmast</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">Building Healthy Habits for a Stronger Body and Mind</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">Explore simple, sustainable habits that support both physical health and mental well-being.</p>
+                    </div>
+                    <div class="w-70 bg-[#F6F6F6] dark:bg-[#141C26] h-85 p-2 rounded-xl flex flex-col gap-3">
+                        <div class="bg-[url(/src/img/blog-none.jpg)] bg-[#E2E2E2] w-full h-40 shrink-0 bg-cover bg-no-repeat bg-center rounded-xl dark:bg-[#223447]"></div>
+                        <span class="px-2 py-1 text-xs rounded-lg bg-black text-white w-fit">#NewYear</span>
+                        <h3 class="text-lg font-bold dark:text-[#E6EEF7]">lorem ipsum dolor sit amet consecteur</h3>
+                        <p class="text-[#3A3A3A] text-sm truncate dark:text-[#C2CEDA]">A helpful guide to preparing for your first appointment, designed to make your clinic experience smooth and stress-free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="px-2 py-1 bg-[#47B0FB] text-white overflow-hidden w-full" id="text_walking">
+            <div class="animate-carousel w-max flex items-center whitespace-nowrap">
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="px-5 py-10
+         flex flex-col lg:flex-row
+         gap-10
+         bg-white dark:bg-[#0E141B]">
+
+        <!-- LEFT -->
+        <div class="flex flex-col gap-4 lg:justify-between lg:w-80">
+            <h2 class="text-[#47B0FB] dark:text-[#4FA8E8] text-xl font-bold">Unipro.</h2>
+
+            <p class="text-sm text-[#333333] max-w-sm dark:text-[#C2CEDA]">
+                &copy; 2025 Viva healthCare by team TekniKarya <br>
+                Terms of Service | Privacy Policy
+            </p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex-1 grid
+             grid-cols-2 sm:grid-cols-3 lg:grid-cols-4
+             gap-6 dark:text-[#E6EEF7]">
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">Products</li>
+                <li>Product</li>
+                <li>Pricing</li>
+                <li>Partner Ship</li>
+                <li>Request Schedule</li>
+            </ul>
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">About Us</li>
+                <li>About Viva Healthcare</li>
+                <li>Contact Us</li>
+                <li>Features</li>
+            </ul>
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">Resources</li>
+                <li>Help Center</li>
+                <li>Start a Trial</li>
+                <li>Blog</li>
+            </ul>
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">Get In Touch</li>
+                <li>Questions or Feedback</li>
+                <li>Linktree</li>
+                <li class="flex items-center gap-4 mt-2">
+                    <i data-lucide="facebook" class="stroke-3 fill-black dark:fill-[#E6EEF7]"></i>
+                    <i data-lucide="twitter" class="stroke-3 fill-black dark:fill-[#E6EEF7]"></i>
+                    <i data-lucide="linkedin" class="stroke-3 fill-black dark:fill-[#E6EEF7]"></i>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+    <script src="src/js/main.js" type="module"></script>
+</body>
+
+</html>

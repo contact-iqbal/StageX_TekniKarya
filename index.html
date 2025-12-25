@@ -1,120 +1,637 @@
-<!-- start of page -->
-
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- //
-project management: Iqbal, Bintang, Yoeichi
-[*] version manager = 1.0.0
-
-
-// --- github branch online : [ -- source : https://github.com/contact-iqbal/stageX_unipro
-// --- + main
-
-{{
-
-    core concepts interpretation = [ -- design is based on figma file : https://www.figma.com/design/1ZYhnBnraMTDg0efCggmID/Viva-HealthCare_StageX_Unipro?node-id=0-1&t=yJ14CHo5q61LvRM3-1
-
-    1. Mobile-First Design: The layout is designed to be responsive, starting with a
-        mobile-friendly approach and scaling up for larger screens using Tailwind CSS classes.
-
-    2. Flexbox Layout: The use of Flexbox for the navigation section ensures that elements
-        are properly aligned and spaced.
-
-    3. Container Usage: The container classes help in maintaining consistent widths
-        across different screen sizes, enhancing the overall design structure.
-        ]
-
-}}
--->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--content delivery network manager -->
-    <link rel="stylesheet" href="src/style/global.css">
-    <script src="https://kit.fontawesome.com/e1288edb06.js" crossorigin="anonymous"></script>
-
-    <title>Unipro lomba</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
-    <div class="wrapper w-full flex flex-col items-center justify-start">
+<body class="dark:bg-[#0E141B]">
 
-        <!-- // navigation segment section: start of navigation bar -->
-        <nav class="w-full h-fit flex justify-center ">
-            <div class="container-lg  w-full min-h-[80px] md:container-sm flex justify-center">
+    <!--// start of navigation -->
+    <header class="w-full bg-white fixed z-3 h-20 dark:bg-[#0E141B]">
+        <div class="flex items-center justify-none lg:justify-between p-5 max-w-7xl m-auto relative z-3">
+            <a href="#" class="font-sans font-bold text-2xl text-[#26A2FF] dark:text-[#4FA8E8]">
+                Unipro.
+            </a>
+            <nav class="text-[#000000] items-center gap-9 hidden lg:flex dark:text-[#E6EEF7]">
+                <a href="index.html" class="font-bold">Home</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
+            </nav>
 
-                <!-- link hortatory -->
-                <div class="h-full p-4 w-full md:w-fit flex items-center  md:justify-center" id="logo">
-                    <a href="#" class="font-bold text-2xl text-neutral-800">Unipro.</a>
-                </div>
+            <div class="w-full lg:max-w-fit max-w-none lg:w-full h-full flex items-center justify-end gap-1">
+                <button
+                    class="dark-mode-toggle bg-[#0E141B] p-1 flex items-center gap-1 text-lg font-semibold rounded-full relative dark:bg-[#E6EEF7]">
+                    <div class="bg-white w-8 h-8 rounded-full flex items-center justify-center absolute left-1 transition-[left] duration-400 ease-in-out z-2 dark:bg-[#0E141B]"
+                        id="iconWrapper">
+                        <i data-lucide="moon" class="fill-[#0E141B] opacity-100 transition-[opacity] duration-200"
+                            id="moon"></i>
+                        <i data-lucide="sun" class="fill-[#1A1A1A] absolute opacity-0 transition-[opacity] duration-200 dark:text-[#E6EEF7]"
+                            id="sun"></i>
+                    </div>
+                    <div class="w-8 h-8">
+                    </div>
+                    <p
+                        class="theme-text text-white px-2 text-sm opacity-100 transition-[opacity] duration-300 relative h-5 dark:text-[#0E141B]">
+                        Dark Mode</p>
+                </button>
 
-                <!-- item list of menus -->
-                <ul
-                    class="gap-4 lg:gap-10 w-full max-w-[600px] hidden md:flex font-medium text-sm h-full items-center justify-center text-neutral-700">
-                    <li><a href="#" class="hover:underline">About</a></li>
-                    <li><a href="#" class="hover:underline">Blog</a></li>
-                    <li><a href="#" class="hover:underline">Contact</a></li>
-                </ul>
+                <button class="lg:hidden p-2 rounded-full bg-black sidebar-toggle dark:bg-[#E6EEF7]">
+                    <i data-lucide="menu" class="text-white dark:text-[#0E141B]"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- // end of navigation -->
+    <div class="overlay h-screen w-full bg-[rgba(0,0,0,.7)] fixed top-0 opacity-0 transition-all duration-300` lg:hidden"></div>
+    <aside class="min-h-screen absolute w-96 bg-white fixed top-0 right-0 translate-x-full transition-all duration-300 lg:hidden" id="sidebar">
+        <div class="p-5 flex items-center gap-6">
+            <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center close-toggle">
+                <i data-lucide="x" width="18" height="18" class="text-white stroke-3"></i>
+            </div>
+            <h3 class="text-2xl font-bold">Menu</h3>
+        </div>
+        <div class="p-5 flex flex-col gap-3">
+            <a href="index.html" class="text-xl font-semibold">Home</a>
+            <a href="about.html" class="text-xl">About</a>
+            <a href="resources.html" class="text-xl">Resources</a>
+            <a href="service.html" class="text-xl">Service</a>
+            <a href="contact.html" class="text-xl">Contact</a>
+        </div>
+    </aside>
 
-                <div class="h-full p-4 bg-black sm:bg-white w-fit min-w-[160px] md:min-w-[150px] whitespace-nowrap gap-4 flex items-center justify-center"
-                    id="button_container_nav">
-                    <a href="#"
-                        class="p-2 hidden sm:inline-block rounded-full border-2 font-medium pl-4 pr-4 white text-sm hover:bg-black hover:text-white">Get
-                        started</a>
+    <!-- main Frame -->
+    <main class="flex flex-col relative z-1" id="content">
 
-                    <!-- hamburger menu icon -->
-                    <a href="#" class="flex h-full w-full mr-0 sm:mr-4 items-center justify-center md:hidden"
-                        id="hamburges_menu">
-                        <i class="fa-solid fa-bars text-white p-3 pr-4 pl-4 bg-black rounded-full"></i>
+        <!-- hero wrapper -->
+        <section class="max-w-7xl m-auto h-fit w-full flex flex-col pt-20" id="hero">
+            <div
+                class="flex-1 flex flex-col-reverse xl:flex-col p-6 xl:grid xl:px-9 grid-cols-2 justify-items-center justify-center items-center ">
+
+                <div class="flex flex-col gap-2 xl:gap-9 h-full w-full justify-center m-20 dark:text-[#E6EEF7]">
+                    <h1 class="text-5xl font-bold leading-13 max-w-3xl">Find and Get your Health Care <span
+                            class="bg-linear-to-r from-[#47B0FB] to-[#FFFFFF] dark:from-[#47B0FB] dark:to-[#0E141B]">Faster.</span></h1>
+                    <p>Navigate Your health together, Your Trusted Medical Resource</p>
+                    <a href="" class="flex items-center gap-2">
+                        <p>Get Started Now</p>
+                        <div class="h-6 w-6 border-2 border-black dark:border-[#E6EEF7] rounded-full flex items-center justify-center">
+                            <i data-lucide="arrow-up-right" height="16" width="16"></i>
+                        </div>
                     </a>
-
-                </div>
-            </div>
-        </nav>
-        <!-- end of navigation bar -->
-
-        <!-- start of banner section -->
-        <section class="max-w-250 container-lg w-full h-fit flex items-center justify-center mt-4 mb-4">
-
-            <div class="block md:flex mr-4 ml-4 w-full bg-[#eef1f7] p-2 min-h-100 rounded-4xl" id="banner_real">
-                <!-- left section -->
-                <div class="flex-1 p-6 flex items-center justify-center flex-col gap-3 md:gap-8">
-                    <h1 class="font-bold text-3xl lg:text-4xl w-full">Empowering Lives Through Health</h1>
-                    <p class="text-md md:text-sm w-full">Navigating Health Together: Your Trusted Medical Resource</p>
-
-                    <!-- Get in touch : desktop mode -->
-                    <span class="hidden md:block w-full mt-4 flex items-center">
-                        <a href="#" class="font-bold text-[0.8rem]">
-                            Get in touch
-                            <i
-                                class=" text-[0.6rem] fa-solid fa-angle-right border-2 p-1 rounded-full pr-[0.4rem] pl-[0.4rem] text-sm"></i>
-                        </a>
-
-                    </span>
-
-                    <!-- Get started MOVE to bottom -->
-                    <span class="block md:hidden w-full mt-4 flex items-center">
-                        <a href="#"
-                            class="p-2 rounded-full border-2 font-medium pl-4 pr-4 white text-sm hover:bg-black hover:text-white">Get
-                            started</a>
-                    </span>
                 </div>
 
-                <!-- right section -->
-                <div class="flex-2 p-6 flex items-center justify-center">
-                    <p class="underline">image goes here <i class="fa-regular fa-circle-question"></i></p>
+                <div class=" relative hidden items-center justify-center w-[300px] m-20 xl:flex">
+                    <img src="src/img/arfrican-doctor.png" alt="" class="w-[200px] scale-120">
+                    <div
+                        class="absolute flex flex-col gap-3 rounded-xl w-full p-3 rounded-xl bg-linear-to-b from-[#1E4F7335] to-[#2A3F5235] backdrop-blur-[10px] -bottom-2 -left-1/2">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-1">
+                                <div
+                                    class="h-10 w-10 bg-[url(/src/img/arfrican-doctor.png)] bg-top bg-no-repeat bg-cover rounded-full">
+                                </div>
+                                <div class="flex flex-col items-start dark:text-[#E6EEF7]">
+                                    <p class="font-bold text-sm">Dr. Richard Lahadalia</p>
+                                    <span class="text-xs">Diagnosing illnes</span>
+                                </div>
+                            </div>
+                            <div class="h-10 w-10 flex items-center justify-center bg-white rounded-full bg-[#E6EEF7]">
+                                <i data-lucide="video" class="fill-[#3B6F96] text-[#3B6F96] opacity-70"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="bg-white px-3 py-2 text-[10px] placeholder:text-sm mt-3 rounded-lg dark:bg-[#0E141B] dark:text-[#E6EEF7]"
+                            placeholder="Let me tell your symtomps">
+                    </div>
+                    <div
+                        class="absolute text-xs dark:text-[#E6EEF7] bg-[#47B0FB] dark:bg-[#4FA8E8] px-4 py-6 text-white rounded-lg -z-1 top-6 right-full left-50 w-[223px]">
+                        <span class="font-bold">“ The art of medicine consists in amusing the patient while nature cures
+                            the disease.”</span> - Voltaire
+                    </div>
                 </div>
+
             </div>
 
+            <section class=" w-full gap-10 p-5 flex flex-col xl:grid xl:grid-cols-3" id="hero-stats">
+                <div class="flex flex-col gap-4 py-3 dark:text-[#E6EEF7]">
+                    <h2 class="text-2xl font-bold">Your bridge to Better Health <br> Start Your Journey Today</h2>
+                    <button class="flex items-center text-white">
+                        <p class="px-4 py-2 bg-[#0B0B0B] dark:bg-[#E6EEF7] dark:text-[#141A1F] text-sm rounded-full">Our working progress</p>
+                        <div class="px-2 py-2 bg-[#0B0B0B] dark:bg-[#E6EEF7] dark:text-[#141A1F] rounded-full">
+                            <i data-lucide="expand" width="20" height="20"></i>
+                        </div>
+                    </button>
+                    <p class="text-xs text-[#9C9C9C] dark:text-[#A8B6C8]">Medicine Meets Technology <br> Your Online Health Hub</p>
+                </div>
+                <div class="col-span-2 py-3 h-50">
+                    <div class="bg-[#CBE6FA] rounded-lg w-full h-full relative flex dark:bg-[#223447] dark:text-[#E6EEF7]">
+                        <div class="flex flex-col justify-between p-4 flex-1">
+                            <div class="w-full flex justify-between">
+                                <h3 class="font-bold text-xl">Our Customer</h3>
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-white rounded-full border-3 border-[#CBE6FA] dark:border-[#223447] dark:bg-[#0E141B]"></div>
+                                    <div
+                                        class="w-8 h-8 bg-white rounded-full border-3 border-[#CBE6FA] absolute -left-5 top-0 dark:border-[#223447] dark:bg-[#0E141B]">
+                                    </div>
+                                    <div
+                                        class="w-8 h-8 bg-white rounded-full border-3 border-[#CBE6FA] absolute -left-10 top-0 dark:border-[#223447] dark:bg-[#0E141B]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-end flex w-full">
+                                <div class="flex flex-col">
+                                    <p class="text-2xl font-semibold">170K+</p>
+                                    <p class="text-sm">Happy Clients</p>
+                                </div>
+                                <a href="#" class="text-xs font-semibold">View Testimonials</a>
+                            </div>
+                        </div>
+
+
+                        <div class="flex flex-col left-[50%] h-full">
+                            <div class="triangle-reverse flex-1 w-10"></div>
+                            <div class="triangle flex-1 w-10"></div>
+                        </div>
+                        <div class="p-8 md:flex items-center justify-center md:flex-1 md:p-4 gap-2">
+                            <div class="hidden md:block h-25 w-25 rounded-full text-black border-3 border-[#47B0FB] p-2 dark:border-[#4FA8E8]">
+                                <p
+                                    class="flex items-center justify-center bg-white w-full h-full rounded-full text-lg font-semibold dark:bg-[#0E141B] dark:text-[#E6EEF7]">
+                                    89%</p>
+                            </div>
+                            <div class="hidden md:flex flex-col items-start">
+                                <p class="text-lg font-semibold">Successfull Rate</p>
+                                <span class="text-sm">Healing Success</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
         </section>
-        <!-- end of banner section -->
 
 
 
-    </div>
+        <section class="max-w-7xl m-auto w-full flex-1 lg:grid lg:grid-cols-2 justify-items-center justify-center items-center p-5">
+            <div class="w-full h-full px-2 py-5 flex items-center relative">
+                <div
+                    class="h-90 w-full lg:w-80 bg-[url(/src/img/female-black-doctor.jpg)] bg-bottom bg-cover bg-no-repeat bg-top rounded-tr-4xl rounded-bl-4xl">
+                </div>
+
+                <div
+                    class="absolute flex flex-col bg-white dark:bg-[#0E141B] w-fit p-4 gap-5 rounded-xl shadow-[0_0_6px_rgba(0,0,0,.2)] dark:shadow-[0_0_6px_rgba(255,255,255,.06)] right-0 lg:left-[50%] bottom-[-10%]">
+                    <div class="bg-white dark:bg-[#0E141B] rounded-xl p-2 absolute -top-6 -left-6">
+                        <div class="bg-[#47B0FB] p-1 flex items-center justify-center rounded-full dark:bg-[#4FA8E8]">
+                            <i data-lucide="check" class="text-white dark:text-[#E6EEF7] stroke-4"></i>
+                        </div>
+                    </div>
+                    <div class="text-end text-[#454545] dark:text-[#C6D1DD] flex flex-col">
+                        <h4 class="font-semibold text-sm">Available Doctor</h4>
+                        <small class="text-[10px]">Select to work with</small>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-fit relative">
+                            <div
+                                class="bg-[url(/src/img/doctor-1.png)] w-10 h-10 rounded-full bg-top bg-cover bg-[#BEE3FF] dark:bg-[#345C7A]">
+                            </div>
+                            <div class=" bg-[#CFFF30] dark:bg-[#9BCF3A] w-fit p-1 rounded-full absolute bottom-0 -right-1">
+                                <i data-lucide="shield" width="12" height="12" class="text-white fill-white dark:text-[#E6EEF7] dark:fill-[#E6EEF7]"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <strong class="font-semibold text-[10px] dark:text-[#E6EEF7]">Dr. Johnny Sins</strong>
+                            <small class="text-[#686868] dark:text-[#B8C4D2] text-[8px]">Psychology Self illness desaese</small>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-80">
+                        <div class="w-fit relative">
+                            <div
+                                class="bg-[url(/src/img/doctor-1.png)] w-10 h-10 rounded-full bg-top bg-cover bg-[#BEE3FF] dark:bg-[#345C7A]">
+                            </div>
+                            <div class=" bg-[#CFFF30] dark:bg-[#9BCF3A] w-fit p-1 rounded-full absolute bottom-0 -right-1">
+                                <i data-lucide="shield" width="12" height="12" class="text-white fill-white dark:text-[#E6EEF7] dark:fill-[#E6EEF7]"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <strong class="font-semibold text-[10px] dark:text-[#E6EEF7]">Dr. Johnny Sins</strong>
+                            <small class="text-[#686868] dark:text-[#B8C4D2] text-[8px]">Psychology Self illness desaese</small>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-60">
+                        <div class="w-fit relative">
+                            <div
+                                class="bg-[url(/src/img/doctor-1.png)] w-10 h-10 rounded-full bg-top bg-cover bg-[#BEE3FF] dark:bg-[#345C7A]">
+                            </div>
+                            <div class=" bg-[#CFFF30] dark:bg-[#9BCF3A] w-fit p-1 rounded-full absolute bottom-0 -right-1">
+                                <i data-lucide="shield" width="12" height="12" class="text-white fill-white dark:text-[#E6EEF7] dark:fill-[#E6EEF7]"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <strong class="font-semibold text-[10px] dark:text-[#E6EEF7]">Dr. Johnny Sins</strong>
+                            <small class="text-[#686868] dark:text-[#B8C4D2] text-[8px]">Psychology Self illness desaese</small>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-40">
+                        <div class="w-fit relative">
+                            <div
+                                class="bg-[url(/src/img/doctor-1.png)] w-10 h-10 rounded-full bg-top bg-cover bg-[#BEE3FF] dark:bg-[#345C7A]">
+                            </div>
+                            <div class=" bg-[#CFFF30] dark:bg-[#9BCF3A] w-fit p-1 rounded-full absolute bottom-0 -right-1">
+                                <i data-lucide="shield" width="12" height="12" class="text-white fill-white dark:text-[#E6EEF7] dark:fill-[#E6EEF7]"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <strong class="font-semibold text-[10px] dark:text-[#E6EEF7]">Dr. Johnny Sins</strong>
+                            <small class="text-[#686868] dark:text-[#B8C4D2] text-[8px]">Psychology Self illness desaese</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex items-end flex w-full h-full justify-center flex-col gap-5 ">
+                <small class="text-[#47B0FB] font-semibold text-lg h-fit w-fit dark:text-[#4FA8E8]">Find Doctors</small>
+                <h1 class="text-end font-bold text-4xl dark:text-[#E6EEF7]">Consult With us Anytime, <br> Anywhere by click</h1>
+                <p class="text-[#4E4E4E] text-end dark:text-[#C6D1DD]">
+                    Whether you need expert advice or a follow-up consultation, our experienced medical team is here
+                    for you, delivering personalized, confidential care through modern technology—no travel or long
+                    waits required.
+                </p>
+                <ul class="flex flex-col items-end flex gap-3 dark:text-[#E6EEF7]">
+                    <li class="flex flex-row-reverse items-center gap-2">
+                        <div class="p-1 bg-[#009DFF] dark:bg-[#4FA8E8] rounded-full">
+                            <i data-lucide="check-check" class="text-white dark:text-[#E6EEF7]" width="16" height="16"></i>
+                        </div>
+                        <p class="font-semibold">Expert medical advice</p>
+                    </li>
+                    <li class="flex flex-row-reverse items-center gap-2">
+                        <div class="p-1 bg-[#009DFF] dark:bg-[#4FA8E8] rounded-full">
+                            <i data-lucide="check-check" class="text-white dark:text-[#E6EEF7]" width="16" height="16"></i>
+                        </div>
+                        <p class="font-semibold">Secure online consultations</p>
+                    </li>
+                    <li class="flex flex-row-reverse items-center gap-2">
+                        <div class="p-1 bg-[#009DFF] dark:bg-[#4FA8E8] rounded-full">
+                            <i data-lucide="check-check" class="text-white dark:text-[#E6EEF7]" width="16" height="16"></i>
+                        </div>
+                        <p class="font-semibold">No travel, no waiting</p>
+                    </li>
+                </ul>
+                <a href=""
+                    class="px-6 py-3 bg-[#009DFF] dark:bg-[#4FA8E8] dark:text-[#E6EEF7] font-semibold text-white flex items-center gap-4 rounded-b-2xl rounded-tl-2xl ">
+                    <span>See Specialities</span>
+                    <i data-lucide="chevron-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="max-w-7xl m-auto w-full flex justify-between gap-3 p-5 flex-col md:items-center md:flex-row md:gap-0" id="service-header">
+            <h1 class="font-bold text-4xl dark:text-[#E6EEF7]">Our Services <br> Reliable</h1>
+            <p class="text-xs text-[#515151] dark:text-[#C2CEDA] md:w-120 md:text-end">Our services make healthcare simple and accessible,
+                offering online consultations and follow-up care through secure digital platforms—so you can get
+                professional medical support wherever you are.</p>
+        </section>
+
+        <section id="service-grid">
+            <section class="p-10 grid gap-4 
+            [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))] max-w-7xl m-auto">
+
+                <div class="min-h-[306px] bg-[#47B0FB] rounded-lg flex flex-col gap-3 items-center justify-center">
+                    <i data-lucide="Briefcase" class="text-white scale-200 stroke-2"></i>
+                    <h2 class="font-semibold text-white w-full text-center text-xl px-3">General Medical Consultation</h2>
+                    <p class="text-xs w-full text-white text-center px-6">Comprehensive check-ups and diagnosis for common
+                        illnesses, chronic conditions, and overall health concerns, provided by
+                        experienced physicians. </p>
+                </div>
+                <div class="min-h-[306px] bg-[#7DC9FF] rounded-lg flex flex-col gap-3 items-center justify-center">
+                    <i data-lucide="test-tube-diagonal" class="text-white scale-200 stroke-2"></i>
+                    <h2 class="font-semibold text-white w-full text-center text-xl px-3">Diagnostic & Laboratory Services
+                    </h2>
+                    <p class="text-xs w-full text-white text-center px-6">Accurate blood tests, imaging, and diagnostic
+                        screenings using modern equipment to support timely and reliable medical
+                        decisions. </p>
+                </div>
+                <div class="min-h-[306px] bg-[#A2D8FF] rounded-lg flex flex-col gap-3 items-center justify-center">
+                    <i data-lucide="heart-plus" class="text-white scale-200 stroke-2"></i>
+                    <h2 class="font-semibold text-white w-full text-center text-xl px-3">Preventive Health Care</h2>
+                    <p class="text-xs w-full text-white text-center px-6">Routine health screenings, vaccinations, and
+                        wellness programs focused on early detection and long-term disease
+                        prevention. </p>
+                </div>
+                <div class="min-h-[306px] bg-[#7DC9FF] rounded-lg flex flex-col gap-3 items-center justify-center">
+                    <i data-lucide="stethoscope" class="text-white scale-200 stroke-2"></i>
+                    <h2 class="font-semibold text-white w-full text-center text-xl px-3">Chronic Disease Management</h2>
+                    <p class="text-xs w-full text-white text-center px-6">Personalized care plans for conditions such as
+                        diabetes, hypertension, asthma, and heart disease, with ongoing
+                        monitoring and support. </p>
+                </div>
+                <div class="min-h-[306px] bg-[#A2D8FF] rounded-lg flex flex-col gap-3 items-center justify-center">
+                    <i data-lucide="venus" class="text-white scale-200 stroke-2"></i>
+                    <h2 class="font-semibold text-white w-full text-center text-xl px-3">Women’s Health Services</h2>
+                    <p class="text-xs w-full text-white text-center px-6">Specialized care including gynecological exams,
+                        prenatal consultations, family planning, and hormonal health management. </p>
+                </div>
+                <div class="min-h-[306px] bg-[transparent] rounded-lg flex flex-col gap-3 items-center justify-center dark:text-[#E6EEF7]">
+                    <h2 class="font-semibold w-full text-center text-2xl px-3 underline">See More</h2>
+                    <p class="text-xs w-full text-center px-6">Look Trough our service available
+                        only for you</p>
+                </div>
+            </section>
+        </section>
+
+
+
+        <section class="px-2 py-1 bg-[#47B0FB] text-white overflow-hidden w-full" id="text_walking">
+            <div class="animate-carousel w-max flex items-center whitespace-nowrap">
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Viva</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+                <p class="me-10">Health Care</p>
+                <div class="h-2 w-2 bg-white rounded-full shrink-0 me-10"></div>
+            </div>
+        </section>
+
+        <section id="service" class="bg-[#E5ECF9] dark:bg-[#141C26]">
+            <section class="h-fit w-full flex flex-col gap-8 px-5 py-10 md:px-12 lg:px-20 max-w-7xl m-auto">
+
+                <!-- Header -->
+                <div id="service-header"
+                    class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-0 md:p-5">
+
+                    <h1 class="font-bold text-2xl md:text-3xl dark:text-[#E6EEF7]">
+                        Our Patient Story
+                    </h1>
+
+                    <p class="text-xs md:text-sm text-[#515151] md:max-w-xl md:text-end dark:text-[#C2CEDA]">
+                        Every patient has a story. In this space, we share real experiences that reflect our commitment to
+                        compassionate, personalized care and the meaningful relationships we build with our patients.
+                    </p>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- CARD 1 -->
+                    <div
+                        class="aspect-square bg-[url(/src/img/story-1.jpg)] bg-cover bg-top rounded-3xl p-6 flex items-end">
+                        <div class="bg-white w-fit p-3 rounded-xl">
+                            <h3 class="font-bold text-lg">When Care Made <br> the Difference</h3>
+                            <p class="text-xs text-[#575757]">One patient’s journey <br> toward better health</p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div
+                        class="aspect-square bg-[url(/src/img/story-2.jpg)] bg-cover bg-top rounded-3xl p-6 flex items-center justify-center">
+                        <div class="bg-white w-fit p-3 rounded-xl">
+                            <p class="text-xs text-[#575757]">Support, treatment, and <br> a path forward</p>
+                            <h3 class="font-bold text-lg">To New Chapter</h3>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div
+                        class="aspect-square bg-[url(/src/img/story-3.jpg)] bg-cover bg-top rounded-3xl p-6 flex items-end">
+                        <div class="bg-white w-full p-3 rounded-xl">
+                            <h3 class="font-bold text-lg">Mariadi’s Turning Point</h3>
+                            <p class="text-xs text-[#575757]">
+                                Finding answers through compassionate, consistent care
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Faq Section -->
+        <section id="faq" class="bg-linear-to-b from-[#E5ECF9] dark:from-[#141C26] dark:to-[#0E141B]">
+            <section class="max-w-7xl m-auto to-white px-5 py-10 md:px-12 lg:px-20">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <!-- Left content -->
+                    <div class="flex flex-col gap-4 lg:w-80">
+                        <small class="text-[#26A2FF] font-bold">FAQs</small>
+                        <h1 class="text-2xl md:text-3xl font-bold dark:text-[#E6EEF7]">
+                            Frequently <br class="hidden lg:block"> Asked Questions
+                        </h1>
+                        <p class="text-sm dark:text-[#C2CEDA]">
+                            Our FAQ section answers common questions about appointments, services, insurance, and
+                            care—helping you
+                            feel informed and confident every step of the way.
+                        </p>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-3">
+                        <div class="flex-1 flex flex-col gap-3">
+                            <div
+                                class="bg-white border-3 border-[#E7E9EB] rounded-lg accordion-container overflow-hidden transition-all duration-200">
+                                <div class="accordion-header flex items-center justify-between p-2">
+                                    <h4 class="font-semibold">How do I book an appointment?</h4>
+                                    <button class="accordion-toggle">
+                                        <i data-lucide="plus" width="14" height="14"
+                                            class="transition-all duration-200"></i>
+                                    </button>
+                                </div>
+                                <div class="accordion-content p-2 text-sm text-[#636363]">
+                                    Nothing to see.
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white border-3 border-[#E7E9EB] rounded-lg accordion-container overflow-hidden transition-all duration-200">
+                                <div class="accordion-header flex items-center justify-between p-2">
+                                    <h4 class="font-semibold">What services do you offer?</h4>
+                                    <button class="accordion-toggle">
+                                        <i data-lucide="plus" width="14" height="14"
+                                            class="transition-all duration-200"></i>
+                                    </button>
+                                </div>
+                                <div class="accordion-content p-2 text-sm text-[#636363]">
+                                    We provide general consultations, preventive care, diagnostic services, chronic disease
+                                    management, and more. Visit our Services page for full details.
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white border-3 border-[#E7E9EB] rounded-lg accordion-container overflow-hidden transition-all duration-200">
+                                <div class="accordion-header flex items-center justify-between p-2">
+                                    <h4 class="font-semibold">Do you accept insurance?</h4>
+                                    <button class="accordion-toggle">
+                                        <i data-lucide="plus" width="14" height="14"
+                                            class="transition-all duration-200"></i>
+                                    </button>
+                                </div>
+                                <div class="accordion-content p-2 text-sm text-[#636363]">
+                                    Yes, we do.
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white border-3 border-[#E7E9EB] rounded-lg accordion-container overflow-hidden transition-all duration-200">
+                                <div class="accordion-header flex items-center justify-between p-2">
+                                    <h4 class="font-semibold">What should I bring to my appointment?</h4>
+                                    <button class="accordion-toggle">
+                                        <i data-lucide="plus" width="14" height="14"
+                                            class="transition-all duration-200"></i>
+                                    </button>
+                                </div>
+                                <div class="accordion-content p-2 text-sm text-[#636363]">
+                                    Nothing to bring here.
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white border-3 border-[#E7E9EB] rounded-lg accordion-container overflow-hidden transition-all duration-200">
+                                <div class="accordion-header flex items-center justify-between p-2">
+                                    <h4 class="font-semibold">Do you offer telemedicine consultations?</h4>
+                                    <button class="accordion-toggle">
+                                        <i data-lucide="plus" width="14" height="14"
+                                            class="transition-all duration-200"></i>
+                                    </button>
+                                </div>
+                                <div class="accordion-content p-2 text-sm text-[#636363]">
+                                    Yes we do.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </section>
+
+        <section class="px-5 py-10">
+            <!-- UI SIZE CONSTRAINT -->
+            <div class="max-w-7xl mx-auto">
+
+                <div class="relative flex flex-col md:flex-row
+                   bg-[#8BCDFF] dark:bg-[#2F5F85] rounded-3xl md:min-h-[280px]">
+
+                    <!-- IMAGE -->
+                    <div class="md:w-1/2 relative hidden md:flex items-end justify-center ">
+                        <img src="src/img/promotion-doctor.png" alt="" class="w-auto h-[260px] md:h-[320px] lg:h-[360px]
+                           object-contain
+                           md:absolute md:bottom-0 md:left-10">
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="md:w-1/2 flex flex-col justify-center
+                       gap-4 px-6 py-8 md:px-10 lg:px-14">
+
+                        <h2 class="text-2xl md:text-3xl font-bold dark:text-[#E6EEF7]">
+                            Free Online Consultations
+                            Starting at $50/month
+                        </h2>
+
+                        <p class="text-sm text-[#333333] dark:text-[#C2CEDA] max-w-lg">
+                            Decide what specific services or consultations you’ll offer for free.
+                            This could be a brief introductory call, a preliminary assessment,
+                            or a quick Q&A session.
+                        </p>
+
+                        <a href="#" class="px-6 py-3 bg-white font-semibold
+                           flex items-center gap-4
+                           rounded-full w-fit dark:text-[#0E141B]">
+                            Contact Us
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <footer class="px-5 py-10
+         flex flex-col lg:flex-row
+         gap-10
+         bg-white dark:bg-[#0E141B]">
+
+        <!-- LEFT -->
+        <div class="flex flex-col gap-4 lg:justify-between lg:w-80">
+            <h2 class="text-[#47B0FB] dark:text-[#4FA8E8] text-xl font-bold">Unipro.</h2>
+
+            <p class="text-sm text-[#333333] max-w-sm dark:text-[#C2CEDA]">
+                &copy; 2025 Viva healthCare by team TekniKarya <br>
+                Terms of Service | Privacy Policy
+            </p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex-1 grid
+             grid-cols-2 sm:grid-cols-3 lg:grid-cols-4
+             gap-6 dark:text-[#E6EEF7]">
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">Products</li>
+                <li>Product</li>
+                <li>Pricing</li>
+                <li>Partner Ship</li>
+                <li>Request Schedule</li>
+            </ul>
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">About Us</li>
+                <li>About Viva Healthcare</li>
+                <li>Contact Us</li>
+                <li>Features</li>
+            </ul>
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">Resources</li>
+                <li>Help Center</li>
+                <li>Start a Trial</li>
+                <li>Blog</li>
+            </ul>
+
+            <ul class="flex flex-col gap-2">
+                <li class="font-bold">Get In Touch</li>
+                <li>Questions or Feedback</li>
+                <li>Linktree</li>
+                <li class="flex items-center gap-4 mt-2">
+                    <i data-lucide="facebook" class="stroke-3 fill-black dark:fill-[#E6EEF7]"></i>
+                    <i data-lucide="twitter" class="stroke-3 fill-black dark:fill-[#E6EEF7]"></i>
+                    <i data-lucide="linkedin" class="stroke-3 fill-black dark:fill-[#E6EEF7]"></i>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+
+
+    <script src="src/js/main.js" type="module"></script>
 </body>
 
 </html>

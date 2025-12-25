@@ -1,2 +1,7 @@
 node_modules/
+<<<<<<< HEAD
 .vscode
+=======
+.vscode/
+src/css/output.css
+>>>>>>> bintang_core
