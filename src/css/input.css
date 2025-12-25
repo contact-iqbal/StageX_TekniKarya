@@ -16,6 +16,14 @@
     background-color: #fff;
 }
 
+.dark .triangle{
+  background-color: #0E141B;
+}
+
+.dark .triangle-reverse{
+  background-color: #0E141B;
+}
+
 .scroll-none{
   scrollbar-width: none;
 }

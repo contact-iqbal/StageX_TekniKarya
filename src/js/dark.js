@@ -23,8 +23,8 @@ export function initDark(){
     toggle.addEventListener("click", ()=>{
         if(!isDark){
             isDark = true
-            document.body.classList.remove("light")
-            document.body.classList.add("dark")
+            document.documentElement.classList.remove("light")
+            document.documentElement.classList.add("dark")
             iconWrapper.classList.add("left-25")
             iconWrapper.classList.remove("left-1")
             text.classList.add("opacity-0")
@@ -40,8 +40,8 @@ export function initDark(){
             }, 500)
         }else{
             isDark = false
-            document.body.classList.add("light")
-            document.body.classList.remove("dark")
+            document.documentElement.classList.add("light")
+            document.documentElement.classList.remove("dark")
             iconWrapper.classList.remove("left-25")
             iconWrapper.classList.add("left-1")
             text.classList.add("opacity-0")
