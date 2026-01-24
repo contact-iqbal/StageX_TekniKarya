@@ -1,6 +1,4 @@
 {
-<<<<<<< HEAD
-=======
   "name": "stagex_teknikarya",
   "version": "1.0.0",
   "description": "Stage X Competition Team consists of Iqbal, Bintang, and Yoeichi, a dedicated and innovative group collaborating to empower health and improve lives through the development of a comprehensive clinic website. The team focuses on creating a user-friendly digital platform that enhances access to healthcare information, supports patient engagement, and strengthens the clinic’s ability to serve the community effectively.\r ## Features",
@@ -21,7 +19,6 @@
     "url": "https://github.com/contact-iqbal/StageX_TekniKarya/issues"
   },
   "homepage": "https://github.com/contact-iqbal/StageX_TekniKarya#readme",
->>>>>>> bintang_core
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"

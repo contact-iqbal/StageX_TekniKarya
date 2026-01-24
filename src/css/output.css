@@ -7,6 +7,8 @@
     --font-sans: "Poppins", sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-neutral-700: oklch(37.1% 0 0);
+    --color-neutral-800: oklch(26.9% 0 0);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -31,6 +33,7 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
+    --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-sm: 0.25rem;
@@ -657,14 +660,8 @@
   .bg-\[\#0B0B0B\] {
     background-color: #0B0B0B;
   }
-  .bg-\[\#0E141B25\] {
-    background-color: #0E141B25;
-  }
   .bg-\[\#0E141B\] {
     background-color: #0E141B;
-  }
-  .bg-\[\#1A1A1A\] {
-    background-color: #1A1A1A;
   }
   .bg-\[\#7DC9FF\] {
     background-color: #7DC9FF;
@@ -745,9 +742,6 @@
       --tw-gradient-position: to right in oklab;
     }
     background-image: linear-gradient(var(--tw-gradient-stops));
-  }
-  .bg-\[linear-gradient\(to_bottom\,\#0E141B\,rgba\(0\,0\,0\,\.5\)_100\%\)\] {
-    background-image: linear-gradient(to bottom,#0E141B,rgba(0,0,0,.5) 100%);
   }
   .bg-\[linear-gradient\(to_bottom\,\#fff_10\%\,rgba\(0\,0\,0\,\.5\)_100\%\)\] {
     background-image: linear-gradient(to bottom,#fff 10%,rgba(0,0,0,.5) 100%);
@@ -1024,9 +1018,6 @@
   .text-\[\#4E4E4E\] {
     color: #4E4E4E;
   }
-  .text-\[\#4FA8E8\] {
-    color: #4FA8E8;
-  }
   .text-\[\#009DFF\] {
     color: #009DFF;
   }
@@ -1063,14 +1054,8 @@
   .text-\[\#636363\] {
     color: #636363;
   }
-  .text-\[\#666666\] {
-    color: #666666;
-  }
   .text-\[\#686868\] {
     color: #686868;
-  }
-  .text-\[\#E6EEF7\] {
-    color: #E6EEF7;
   }
   .text-black {
     color: var(--color-black);
@@ -1103,36 +1088,16 @@
     --tw-shadow: 0 0 6px var(--tw-shadow-color, rgba(0,0,0,.2));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-\[0_0_6px_rgba\(255\,255\,255\,\.06\)\] {
-    --tw-shadow: 0 0 6px var(--tw-shadow-color, rgba(255,255,255,.06));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-\[0_0_6px_rgba\] {
-    --tw-shadow: 0 0 6px var(--tw-shadow-color, rgba);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-\[0_0_7\.3px_rgba\(0\,0\,0\,\.17\)\] {
     --tw-shadow: 0 0 7.3px var(--tw-shadow-color, rgba(0,0,0,.17));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-\[0_0_7\.3px_rgba\(255\,255\,255\,\.17\)\] {
-    --tw-shadow: 0 0 7.3px var(--tw-shadow-color, rgba(255,255,255,.17));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-\[0_0_41\.7px_rgba\(0\,0\,0\,\.17\)\] {
     --tw-shadow: 0 0 41.7px var(--tw-shadow-color, rgba(0,0,0,.17));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-\[0_0_41\.7px_rgba\(255\,255\,255\,\.17\)\] {
-    --tw-shadow: 0 0 41.7px var(--tw-shadow-color, rgba(255,255,255,.17));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-\[0_0_84\.2px_rgba\(0\,0\,0\,\.17\)\] {
     --tw-shadow: 0 0 84.2px var(--tw-shadow-color, rgba(0,0,0,.17));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-\[0_0_84\.2px_rgba\(255\,255\,255\,\.17\)\] {
-    --tw-shadow: 0 0 84.2px var(--tw-shadow-color, rgba(255,255,255,.17));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .backdrop-blur-2xl {
@@ -1584,34 +1549,9 @@
       background-color: rgba(255,255,255,.04);
     }
   }
-  .dark\:bg-\[linear-gradient\(to_bottom\,\#0E141B\,rgba\(0\,0\,0\,\.1\)_100\%\)\] {
-    .dark & {
-      background-image: linear-gradient(to bottom,#0E141B,rgba(0,0,0,.1) 100%);
-    }
-  }
   .dark\:bg-\[linear-gradient\(to_bottom\,\#0E141B\,rgba\(0\,0\,0\,\.2\)_100\%\)\] {
     .dark & {
       background-image: linear-gradient(to bottom,#0E141B,rgba(0,0,0,.2) 100%);
-    }
-  }
-  .dark\:bg-\[linear-gradient\(to_bottom\,\#0E141B\,rgba\(0\,0\,0\,\.5\)_100\%\)\] {
-    .dark & {
-      background-image: linear-gradient(to bottom,#0E141B,rgba(0,0,0,.5) 100%);
-    }
-  }
-  .dark\:bg-\[linear-gradient\(to_bottom\,\#0E141B\,rgba\(255\,255\,255\,\.1\)_100\%\)\] {
-    .dark & {
-      background-image: linear-gradient(to bottom,#0E141B,rgba(255,255,255,.1) 100%);
-    }
-  }
-  .dark\:bg-\[linear-gradient\(to_bottom\,\#0E141B\,rgba\(255\,255\,255\,\.2\)_100\%\)\] {
-    .dark & {
-      background-image: linear-gradient(to bottom,#0E141B,rgba(255,255,255,.2) 100%);
-    }
-  }
-  .dark\:bg-\[linear-gradient\(to_bottom\,\#0E141B\,rgba\(255\,255\,255\,\.5\)_100\%\)\] {
-    .dark & {
-      background-image: linear-gradient(to bottom,#0E141B,rgba(255,255,255,.5) 100%);
     }
   }
   .dark\:from-\[\#47B0FB\] {
@@ -1642,19 +1582,9 @@
       color: #0E141B;
     }
   }
-  .dark\:text-\[\#2A3645\] {
-    .dark & {
-      color: #2A3645;
-    }
-  }
   .dark\:text-\[\#4FA8E8\] {
     .dark & {
       color: #4FA8E8;
-    }
-  }
-  .dark\:text-\[\#6a6a6a\] {
-    .dark & {
-      color: #6a6a6a;
     }
   }
   .dark\:text-\[\#141A1F\] {
@@ -1682,34 +1612,9 @@
       color: #C6D1DD;
     }
   }
-  .dark\:text-\[\#D1D9E0\] {
-    .dark & {
-      color: #D1D9E0;
-    }
-  }
-  .dark\:text-\[\#E0E0E0\] {
-    .dark & {
-      color: #E0E0E0;
-    }
-  }
   .dark\:text-\[\#E6EEF7\] {
     .dark & {
       color: #E6EEF7;
-    }
-  }
-  .dark\:text-\[\#d0d0d0\] {
-    .dark & {
-      color: #d0d0d0;
-    }
-  }
-  .dark\:text-\[\#dark\:text-\[\#E6EEF7\]\] {
-    .dark & {
-      color: #dark:text-[#E6EEF7];
-    }
-  }
-  .dark\:text-\[\#f0f0f0\] {
-    .dark & {
-      color: #f0f0f0;
     }
   }
   .dark\:shadow-\[0_0_6px_rgba\(255\,255\,255\,\.06\)\] {
