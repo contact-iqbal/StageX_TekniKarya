@@ -6,6 +6,8 @@ export function initSidebar(){
     const overlay = document.querySelector(".overlay")
     let sidebarOpen = false
 
+    if(!sidebar && !toggle && !close && !overlay) return
+
     toggle.addEventListener("click", (e)=>{
         console.log("toggle clicked")
         e.stopPropagation()
