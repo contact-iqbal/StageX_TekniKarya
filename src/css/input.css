@@ -40,3 +40,49 @@
     transform: translateX(-50%);
   }
 }
+
+#darkToggle svg{
+    display: block;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#darkToggle{
+    animation: scaling 2s linear infinite;
+}
+
+#darkToggle:hover{
+    animation-play-state: paused;
+}
+
+#darkToggle:hover svg{
+    animation: rotating .6s ease;
+}
+
+@keyframes rotating {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(5deg);
+    }
+
+    75%{
+        transform: rotateZ(-5deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes scaling {
+    0%{
+        transform: scale(1.1);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}

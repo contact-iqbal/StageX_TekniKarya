@@ -7,13 +7,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="src/css/output.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="src/js/main.js" type="module"></script>
 </head>
 
 <body class="dark:bg-[#0E141B]">
+    <div class="fixed z-4 right-5 bottom-5">
+        <button id="darkToggle" class="h-15 w-15 rounded-full bg-white border-2 border-gray-500 flex items-center justify-center bottom-5 right-5 hover:scale-110 transition-all duration-300 relative dark:bg-[#3a3a3a] dark:border-gray-400">
+            <i data-lucide="sun" class="text-gray-500 opacity-100" id="sun"></i>
+            <i data-lucide="moon" class="absolute top-4 opacity-0 dark:text-gray-400" id="moon"></i>
+        </button>
+    </div>
 
     <!--// start of navigation -->
-    <header class="w-full bg-white fixed z-3 h-20 dark:bg-[#0E141B]">
-        <div class="flex items-center justify-none lg:justify-between p-5 max-w-7xl m-auto relative z-3">
+    <header class="w-full bg-white fixed z-3 h-20 dark:bg-[#0E141B] relative z-1">
+        <div class="flex items-center justify-between p-5 max-w-7xl m-auto relative z-3">
             <a href="#" class="font-sans font-bold text-2xl text-[#26A2FF] dark:text-[#4FA8E8]">
                 Unipro.
             </a>
@@ -25,7 +32,14 @@
                 <a href="contact.html">Contact</a>
             </nav>
 
-            
+            <div class="flex items-center gap-1">
+                <a href="" class="font-semibold bg-[#1e1e1e] px-8 py-2 text-white rounded-full shadow-[0_2px_6px_rgba(0,0,0,.8)] hover:-translate-y-2 hover:shadow-[0_2px_8px_7px_rgba(0,0,0,.2)] transition-all duration-300">
+                    Log In
+                </a>
+                <button class="lg:hidden p-2 rounded-full bg-black sidebar-toggle dark:bg-[#E6EEF7]">
+                    <i data-lucide="menu" class="text-white dark:text-[#0E141B]"></i>
+                </button>
+            </div>
         </div>
     </header>
     <!-- // end of navigation -->
@@ -609,9 +623,6 @@
 
         </div>
     </footer>
-
-
-    <script src="src/js/main.js" type="module"></script>
 </body>
 
 </html>
